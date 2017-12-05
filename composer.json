@@ -1,0 +1,24 @@
+{
+    "name": "branchzero/lumen-advanced-route",
+    "type": "library",
+    "version": "0.1.0",
+    "description": "Add Support For Nested Group && Resource.",
+    "keywords": ["lumen", "route", "group", "any", "match"],
+    "license": "MIT",
+    "authors": [{
+        "name": "BranchZero Sun",
+        "email": "branchzero@gmail.com"
+    }],
+    "require": {
+        "php": ">=7.0",
+        "laravel/lumen-framework": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "BranchZero\\AdvancedRoute\\": "src"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
