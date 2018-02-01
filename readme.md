@@ -3,8 +3,8 @@
 inspired by fremail/lumen-nested-route-groups, adding support for lumen resource route.
 
 # Changelog
-**v.0.1.1** Remove Useless Code.
-**v.0.1.0** Add Support For Lumen 5.5 && Resource.
+ - **v.0.1.1** Remove Useless Code.
+ - **v.0.1.0** Add Support For Lumen 5.5 && Resource.
 
 
 ## How to install (steps)
