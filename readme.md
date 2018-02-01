@@ -1,8 +1,9 @@
 # Note
 
-this is a modification based in fremail/lumen-nested-route-groups, adding support for Lumen 5.5 && resource route.
+inspired by fremail/lumen-nested-route-groups, adding support for lumen resource route.
 
 # Changelog
+**v.0.1.1** Remove Useless Code.
 **v.0.1.0** Add Support For Lumen 5.5 && Resource.
 
 
@@ -33,24 +34,7 @@ $app = new BranchZero\AdvancedRoute\Application(
 );
 ```
 
-### After these simple steps you can use nested route groups in your application!
-
-
-## Additional namespaces configuration
-By default this lib uses nested namespace ([Laravel style](https://laravel.com/docs/5.2/routing#route-group-namespaces)), but you can determine to use full namespaces instead ([Lumen style](https://lumen.laravel.com/docs/5.2/routing#route-group-namespaces)).
-
-**Steps for using full namespaces:**
-
-1. Create `config` directory if you don't have one in the project root.
-
-2. Copy `advanced_route.php` from `vendor/branchzero/lumen-advanced-route/config` folder to the created `config` dir in the root.
-
-3. Open the `config/advanced_route.php` file and set 'namespace' value to 'full'.
-
-4. Add this line to your bootstrap/app.php: `$app->configure('advanced_route');`
-
-
-## Any() and Match() methods
+## Any() and Match() and resource() methods
 Do you like `any()` and `match()` methods on Laravel? I love them! That's why I added supporting them on Lumen.
 The syntax is the same as for [Laravel](https://laravel.com/docs/master/routing#basic-routing):
 ```
@@ -73,11 +57,7 @@ $app->group(['middleware' => 'auth'], function () use ($app) {
         echo "Hello world!";
     });
 
-    $app->group(['prefix' => 'user'], function () use ($app) {
-        $app->get('{id}', 'UserController@show');
-        $app->post('/', 'UserController@store');
-        $app->delete('{id}', 'UserController@destroy');
-    });
+    $app->resource('user', 'UserController', ['only' => ['show', 'store', 'destroy']]);
 
     /**
      * only admins
