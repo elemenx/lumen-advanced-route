@@ -12,7 +12,7 @@ inspired by fremail/lumen-nested-route-groups, adding support for lumen resource
 ### 1. Install using Composer
 
 ```
-composer require "branchzero/lumen-advanced-route:~0.1"
+composer require "elemenx/lumen-advanced-route:~0.1"
 ```
 
 ### 2. Required changes in bootstrap/app.php
@@ -29,7 +29,7 @@ $app = new Laravel\Lumen\Application(
 After:
 
 ```
-$app = new BranchZero\AdvancedRoute\Application(
+$app = new ElemenX\AdvancedRoute\Application(
     realpath(__DIR__.'/../')
 );
 ```

@@ -1,6 +1,6 @@
 <?php
 
-namespace BranchZero\AdvancedRoute\Routing;
+namespace ElemenX\AdvancedRoute\Routing;
 
 class Router extends \Laravel\Lumen\Routing\Router
 {
@@ -62,7 +62,7 @@ class Router extends \Laravel\Lumen\Routing\Router
      * @param  string  $name
      * @param  string  $controller
      * @param  array  $options
-     * @return \Illuminate\Routing\PendingResourceRegistration
+     * @return \ElemenX\AdvancedRoute\Routing\PendingResourceRegistration
      */
     public function resource($name, $controller, array $options = [])
     {

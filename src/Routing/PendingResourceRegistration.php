@@ -1,13 +1,13 @@
 <?php
 
-namespace BranchZero\AdvancedRoute\Routing;
+namespace ElemenX\AdvancedRoute\Routing;
 
 class PendingResourceRegistration
 {
     /**
      * The resource registrar.
      *
-     * @var \BranchZero\AdvancedRoute\Routing\ResourceRegistrar
+     * @var \ElemenX\AdvancedRoute\Routing\ResourceRegistrar
      */
     protected $registrar;
 
@@ -35,7 +35,7 @@ class PendingResourceRegistration
     /**
      * Create a new pending resource registration instance.
      *
-     * @param  \BranchZero\AdvancedRoute\Routing\ResourceRegistrar  $registrar
+     * @param  \ElemenX\AdvancedRoute\Routing\ResourceRegistrar  $registrar
      * @param  string  $name
      * @param  string  $controller
      * @param  array  $options
@@ -53,7 +53,7 @@ class PendingResourceRegistration
      * Set the methods the controller should apply to.
      *
      * @param  array|string|dynamic  $methods
-     * @return \BranchZero\AdvancedRoute\Routing\PendingResourceRegistration
+     * @return \ElemenX\AdvancedRoute\Routing\PendingResourceRegistration
      */
     public function only($methods)
     {
@@ -66,7 +66,7 @@ class PendingResourceRegistration
      * Set the methods the controller should exclude.
      *
      * @param  array|string|dynamic  $methods
-     * @return \BranchZero\AdvancedRoute\Routing\PendingResourceRegistration
+     * @return \ElemenX\AdvancedRoute\Routing\PendingResourceRegistration
      */
     public function except($methods)
     {
@@ -79,7 +79,7 @@ class PendingResourceRegistration
      * Set the route names for controller actions.
      *
      * @param  array|string  $names
-     * @return \BranchZero\AdvancedRoute\Routing\PendingResourceRegistration
+     * @return \ElemenX\AdvancedRoute\Routing\PendingResourceRegistration
      */
     public function names($names)
     {
@@ -93,7 +93,7 @@ class PendingResourceRegistration
      *
      * @param  string  $method
      * @param  string  $name
-     * @return \BranchZero\AdvancedRoute\Routing\PendingResourceRegistration
+     * @return \ElemenX\AdvancedRoute\Routing\PendingResourceRegistration
      */
     public function name($method, $name)
     {
@@ -106,7 +106,7 @@ class PendingResourceRegistration
      * Override the route parameter names.
      *
      * @param  array|string  $parameters
-     * @return \BranchZero\AdvancedRoute\Routing\PendingResourceRegistration
+     * @return \ElemenX\AdvancedRoute\Routing\PendingResourceRegistration
      */
     public function parameters($parameters)
     {
@@ -120,7 +120,7 @@ class PendingResourceRegistration
      *
      * @param  string  $previous
      * @param  string  $new
-     * @return \BranchZero\AdvancedRoute\Routing\PendingResourceRegistration
+     * @return \ElemenX\AdvancedRoute\Routing\PendingResourceRegistration
      */
     public function parameter($previous, $new)
     {
@@ -133,7 +133,7 @@ class PendingResourceRegistration
      * Set a middleware to the resource.
      *
      * @param  mixed  $middleware
-     * @return \BranchZero\AdvancedRoute\Routing\PendingResourceRegistration
+     * @return \ElemenX\AdvancedRoute\Routing\PendingResourceRegistration
      */
     public function middleware($middleware)
     {

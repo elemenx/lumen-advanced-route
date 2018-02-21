@@ -3,7 +3,7 @@
     "type": "library",
     "version": "0.1.1",
     "description": "Add Support For Nested Group && Resource.",
-    "keywords": ["lumen", "route", "group", "any", "match"],
+    "keywords": ["lumen", "route", "group", "any", "match", "elemenx"],
     "license": "MIT",
     "authors": [{
         "name": "BranchZero Sun",
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BranchZero\\AdvancedRoute\\": "src"
+            "ElemenX\\AdvancedRoute\\": "src"
         }
     },
     "config": {

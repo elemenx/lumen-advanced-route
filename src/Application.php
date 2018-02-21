@@ -1,8 +1,8 @@
 <?php
 
-namespace BranchZero\AdvancedRoute;
+namespace ElemenX\AdvancedRoute;
 
-use BranchZero\AdvancedRoute\Routing\Router;
+use ElemenX\AdvancedRoute\Routing\Router;
 
 /**
  * Class Application
@@ -34,7 +34,7 @@ class Application extends \Laravel\Lumen\Application
             'Illuminate\Contracts\Queue\Factory' => 'queue',
             'Illuminate\Contracts\Queue\Queue' => 'queue.connection',
             'request' => 'Illuminate\Http\Request',
-            'BranchZero\AdvancedRoute\Routing\Router' => 'router',
+            'ElemenX\AdvancedRoute\Routing\Router' => 'router',
             'Laravel\Lumen\Routing\UrlGenerator' => 'url',
             'Illuminate\Contracts\Validation\Factory' => 'validator',
             'Illuminate\Contracts\View\Factory' => 'view',

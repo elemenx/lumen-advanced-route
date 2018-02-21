@@ -1,6 +1,6 @@
 <?php
 
-namespace BranchZero\AdvancedRoute\Routing;
+namespace ElemenX\AdvancedRoute\Routing;
 
 use Illuminate\Support\Str;
 
@@ -9,7 +9,7 @@ class ResourceRegistrar
     /**
      * The router instance.
      *
-     * @var \BranchZero\AdvancedRoute\Routing\Router
+     * @var \ElemenX\AdvancedRoute\Routing\Router
      */
     protected $router;
 
@@ -44,7 +44,7 @@ class ResourceRegistrar
     /**
      * Create a new resource registrar instance.
      *
-     * @param  \BranchZero\AdvancedRoute\Routing\Router  $router
+     * @param  \ElemenX\AdvancedRoute\Routing\Router  $router
      * @return void
      */
     public function __construct(Router $router)
@@ -62,7 +62,7 @@ class ResourceRegistrar
      */
     public function register($name, $controller, array $options = [])
     {
-        if (isset($options['parameters']) && ! isset($this->parameters)) {
+        if (isset($options['parameters']) && !isset($this->parameters)) {
             $this->parameters = $options['parameters'];
         }
 
@@ -83,7 +83,7 @@ class ResourceRegistrar
         $defaults = $this->resourceDefaults;
 
         foreach ($this->getResourceMethods($defaults, $options) as $m) {
-            $this->{'addResource'.ucfirst($m)}($name, $base, $controller, $options);
+            $this->{'addResource' . ucfirst($m)}($name, $base, $controller, $options);
         }
     }
 
@@ -152,7 +152,7 @@ class ResourceRegistrar
      * @param  string  $base
      * @param  string  $controller
      * @param  array   $options
-     * @return \BranchZero\AdvancedRoute\Routing\Route
+     * @return \ElemenX\AdvancedRoute\Routing\Route
      */
     protected function addResourceIndex($name, $base, $controller, $options)
     {
@@ -170,7 +170,7 @@ class ResourceRegistrar
      * @param  string  $base
      * @param  string  $controller
      * @param  array   $options
-     * @return \BranchZero\AdvancedRoute\Routing\Route
+     * @return \ElemenX\AdvancedRoute\Routing\Route
      */
     protected function addResourceStore($name, $base, $controller, $options)
     {
@@ -188,11 +188,11 @@ class ResourceRegistrar
      * @param  string  $base
      * @param  string  $controller
      * @param  array   $options
-     * @return \BranchZero\AdvancedRoute\Routing\Route
+     * @return \ElemenX\AdvancedRoute\Routing\Route
      */
     protected function addResourceShow($name, $base, $controller, $options)
     {
-        $uri = $this->getResourceUri($name).'/{'.$base.'}';
+        $uri = $this->getResourceUri($name) . '/{' . $base . '}';
 
         $action = $this->getResourceAction($name, $controller, 'show', $options);
 
@@ -206,11 +206,11 @@ class ResourceRegistrar
      * @param  string  $base
      * @param  string  $controller
      * @param  array   $options
-     * @return \BranchZero\AdvancedRoute\Routing\Route
+     * @return \ElemenX\AdvancedRoute\Routing\Route
      */
     protected function addResourceUpdate($name, $base, $controller, $options)
     {
-        $uri = $this->getResourceUri($name).'/{'.$base.'}';
+        $uri = $this->getResourceUri($name) . '/{' . $base . '}';
 
         $action = $this->getResourceAction($name, $controller, 'update', $options);
 
@@ -224,11 +224,11 @@ class ResourceRegistrar
      * @param  string  $base
      * @param  string  $controller
      * @param  array   $options
-     * @return \BranchZero\AdvancedRoute\Routing\Route
+     * @return \ElemenX\AdvancedRoute\Routing\Route
      */
     protected function addResourceDestroy($name, $base, $controller, $options)
     {
-        $uri = $this->getResourceUri($name).'/{'.$base.'}';
+        $uri = $this->getResourceUri($name) . '/{' . $base . '}';
 
         $action = $this->getResourceAction($name, $controller, 'destroy', $options);
 
@@ -243,7 +243,7 @@ class ResourceRegistrar
      */
     public function getResourceUri($resource)
     {
-        if (! Str::contains($resource, '.')) {
+        if (!Str::contains($resource, '.')) {
             return $resource;
         }
 
@@ -254,7 +254,7 @@ class ResourceRegistrar
 
         $uri = $this->getNestedResourceUri($segments);
 
-        return str_replace('/{'.$this->getResourceWildcard(end($segments)).'}', '', $uri);
+        return str_replace('/{' . $this->getResourceWildcard(end($segments)) . '}', '', $uri);
     }
 
     /**
@@ -269,7 +269,7 @@ class ResourceRegistrar
         // resource segments, as well as the resource itself. Then we should get an
         // entire string for the resource URI that contains all nested resources.
         return implode('/', array_map(function ($s) {
-            return $s.'/{'.$this->getResourceWildcard($s).'}';
+            return $s . '/{' . $this->getResourceWildcard($s) . '}';
         }, $segments));
     }
 
@@ -305,7 +305,7 @@ class ResourceRegistrar
     {
         $name = $this->getResourceRouteName($resource, $method, $options);
 
-        $action = ['as' => $name, 'uses' => $controller.'@'.$method];
+        $action = ['as' => $name, 'uses' => $controller . '@' . $method];
 
         if (isset($options['middleware'])) {
             $action['middleware'] = $options['middleware'];
@@ -340,7 +340,7 @@ class ResourceRegistrar
         // If a global prefix has been assigned to all names for this resource, we will
         // grab that so we can prepend it onto the name when we create this name for
         // the resource action. Otherwise we'll just use an empty string for here.
-        $prefix = isset($options['as']) ? $options['as'].'.' : '';
+        $prefix = isset($options['as']) ? $options['as'] . '.' : '';
 
         return trim(sprintf('%s%s.%s', $prefix, $name, $method), '.');
     }
