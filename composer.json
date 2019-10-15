@@ -1,7 +1,7 @@
 {
     "name": "elemenx/lumen-advanced-route",
     "type": "library",
-    "version": "0.1.4",
+    "version": "0.1.6",
     "description": "Add Support For Nested Group && Resource.",
     "keywords": ["lumen", "route", "group", "any", "match", "elemenx"],
     "license": "MIT",
