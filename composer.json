@@ -1,7 +1,7 @@
 {
     "name": "elemenx/lumen-advanced-route",
     "type": "library",
-    "version": "0.1.7",
+    "version": "0.2.0",
     "description": "Add Support For Nested Group && Resource.",
     "keywords": ["lumen", "route", "group", "any", "match", "elemenx"],
     "license": "MIT",
@@ -10,8 +10,8 @@
         "email": "branchzero@gmail.com"
     }],
     "require": {
-        "php": ">=7.2",
-        "laravel/lumen-framework": "^6.0"
+        "php": ">=7.3",
+        "laravel/lumen-framework": "^8.0"
     },
     "autoload": {
         "psr-4": {
